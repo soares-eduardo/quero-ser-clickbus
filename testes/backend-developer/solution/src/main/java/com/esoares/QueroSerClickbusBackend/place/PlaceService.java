@@ -18,4 +18,8 @@ public class PlaceService {
     public List<Place> getPlaces() {
         return placeRepository.findAll();
     }
+
+    public void addNewPlace(Place place){
+        System.out.println(place);
+    }
 }

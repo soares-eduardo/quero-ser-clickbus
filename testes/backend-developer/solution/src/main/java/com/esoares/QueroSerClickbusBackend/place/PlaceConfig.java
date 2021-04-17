@@ -23,8 +23,8 @@ public class PlaceConfig {
                 slug,
                 "New York City",
                 "NY",
-                new Date(System.currentTimeMillis()),
-                new Date(System.currentTimeMillis())
+                "17-04-2021",
+                "17-04-2021"
             );
 
             repository.saveAll(List.of(centralParkCoffee));

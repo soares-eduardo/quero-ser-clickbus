@@ -21,14 +21,14 @@ public class Place {
     private String slug;
     private String city;
     private String state;
-    private Date createdAt;
-    private Date updatedAt;
+    private String createdAt;
+    private String updatedAt;
 
     public Place() {
 
     }
 
-    public Place(Long id, String name, String slug, String city, String state, Date createdAt, Date updatedAt) {
+    public Place(Long id, String name, String slug, String city, String state, String createdAt, String updatedAt) {
         this.id = id;
         this.name = name;
         this.slug = slug;
@@ -38,7 +38,7 @@ public class Place {
         this.updatedAt = updatedAt;
     }
 
-    public Place(String name, String slug, String city, String state, Date createdAt, Date updatedAt) {
+    public Place(String name, String slug, String city, String state, String createdAt, String updatedAt) {
         this.name = name;
         this.slug = slug;
         this.city = city;
@@ -69,11 +69,11 @@ public class Place {
         return state;
     }
 
-    public Date getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    public Date getUpdatedAt() {
+    public String getUpdatedAt() {
         return updatedAt;
     }
 
@@ -99,11 +99,11 @@ public class Place {
         this.slug = slug;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
 
-    public void setUpdatedAt(Date updatedAt) {
+    public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
 

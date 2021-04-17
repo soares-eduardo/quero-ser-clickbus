@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,5 +23,10 @@ public class PlaceController {
     @GetMapping
     public List<Place> getPlaces() {
         return placeService.getPlaces();
+    }
+
+    @PostMapping
+    public void registerNewPlace(@RequestBody Place place) {
+        placeService.addNewPlace(place);
     }
 }

@@ -20,6 +20,6 @@ public class PlaceService {
     }
 
     public void addNewPlace(Place place){
-        System.out.println(place);
+        placeRepository.save(place);
     }
 }

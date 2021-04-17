@@ -4,18 +4,11 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Entity
-@Table 
+@Table
 public class Place {
     @Id
-    @SequenceGenerator(
-        name = "place_sequence",
-        sequenceName = "place_sequence",
-        allocationSize = 1
-    )
-    @GeneratedValue(
-        strategy = GenerationType.SEQUENCE,
-        generator = "place_sequence"
-    )
+    @SequenceGenerator(name = "place_sequence", sequenceName = "place_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "place_sequence")
     private Long id;
     private String name;
     private String slug;
@@ -31,7 +24,7 @@ public class Place {
     public Place(Long id, String name, String city, String state, String updatedAt) {
         this.id = id;
         this.name = name;
-        this.slug = name.replace(" ", "-").toLowerCase();
+        this.slug = createSlug(name);
         this.city = city;
         this.state = state;
         this.createdAt = new Date(System.currentTimeMillis());
@@ -40,7 +33,7 @@ public class Place {
 
     public Place(String name, String city, String state, String updatedAt) {
         this.name = name;
-        this.slug = name.replace(" ", "-").toLowerCase();
+        this.slug = createSlug(name);
         this.city = city;
         this.state = state;
         this.createdAt = new Date(System.currentTimeMillis());
@@ -105,6 +98,13 @@ public class Place {
 
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public static String createSlug(String name) {
+        if (!name.contains(" ")) {
+            return name.toLowerCase();
+        }
+        return name.replace(" ", "-").toLowerCase();
     }
 
     @Override

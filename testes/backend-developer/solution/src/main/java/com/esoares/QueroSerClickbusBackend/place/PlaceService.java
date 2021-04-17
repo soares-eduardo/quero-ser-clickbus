@@ -19,8 +19,17 @@ public class PlaceService {
         return placeRepository.findAll();
     }
 
-    //TODO Verify if the place is already registered in the database
-    public void addNewPlace(Place place){
-        placeRepository.save(place);
+    // TODO Verify if the place is already registered in the database
+    public void addNewPlace(Place place) {
+        Place objPlace = new Place(place.getName(), place.getCity(), place.getState(), place.getUpdatedAt());
+        placeRepository.save(objPlace);
+    }
+
+    public void deletePlace(Long placeId) {
+        boolean exists = placeRepository.existsById(placeId);
+        if (!exists) {
+            throw new IllegalStateException("Place with id " + placeId + " does not existis.");
+        }
+        placeRepository.deleteById(placeId);
     }
 }

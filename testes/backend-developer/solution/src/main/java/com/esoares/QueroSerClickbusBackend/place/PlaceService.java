@@ -19,6 +19,7 @@ public class PlaceService {
         return placeRepository.findAll();
     }
 
+    //TODO Verify if the place is already registered in the database
     public void addNewPlace(Place place){
         placeRepository.save(place);
     }

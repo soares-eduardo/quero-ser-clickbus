@@ -21,29 +21,29 @@ public class Place {
     private String slug;
     private String city;
     private String state;
-    private String createdAt;
+    private Date createdAt;
     private String updatedAt;
 
     public Place() {
 
     }
 
-    public Place(Long id, String name, String slug, String city, String state, String createdAt, String updatedAt) {
+    public Place(Long id, String name, String city, String state, String updatedAt) {
         this.id = id;
         this.name = name;
-        this.slug = slug;
+        this.slug = name.replace(" ", "-").toLowerCase();
         this.city = city;
         this.state = state;
-        this.createdAt = createdAt;
+        this.createdAt = new Date(System.currentTimeMillis());
         this.updatedAt = updatedAt;
     }
 
-    public Place(String name, String slug, String city, String state, String createdAt, String updatedAt) {
+    public Place(String name, String city, String state, String updatedAt) {
         this.name = name;
-        this.slug = slug;
+        this.slug = name.replace(" ", "-").toLowerCase();
         this.city = city;
         this.state = state;
-        this.createdAt = createdAt;
+        this.createdAt = new Date(System.currentTimeMillis());
         this.updatedAt = updatedAt;
     }
 
@@ -69,7 +69,7 @@ public class Place {
         return state;
     }
 
-    public String getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
@@ -99,7 +99,7 @@ public class Place {
         this.slug = slug;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 

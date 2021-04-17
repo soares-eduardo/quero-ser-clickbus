@@ -1,6 +1,5 @@
 package com.esoares.QueroSerClickbusBackend.place;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.boot.CommandLineRunner;
@@ -15,15 +14,12 @@ public class PlaceConfig {
         return args -> {
 
             String name = "Central Park Coffee";
-            String slug =  name.replace(" ", "-").toLowerCase();
 
             Place centralParkCoffee = new Place(
                 1L,
                 name,
-                slug,
                 "New York City",
                 "NY",
-                "17-04-2021",
                 "17-04-2021"
             );
 

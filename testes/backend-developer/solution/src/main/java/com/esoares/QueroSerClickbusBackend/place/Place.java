@@ -1,8 +1,21 @@
 package com.esoares.QueroSerClickbusBackend.place;
 
 import java.util.Date;
+import javax.persistence.*;
 
+@Entity
+@Table 
 public class Place {
+    @Id
+    @SequenceGenerator(
+        name = "place_sequence",
+        sequenceName = "place_sequence",
+        allocationSize = 1
+    )
+    @GeneratedValue(
+        strategy = GenerationType.SEQUENCE,
+        generator = "place_sequence"
+    )
     private Long id;
     private String name;
     private String slug;

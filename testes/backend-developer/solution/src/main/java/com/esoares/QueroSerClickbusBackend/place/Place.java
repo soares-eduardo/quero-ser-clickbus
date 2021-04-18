@@ -33,7 +33,6 @@ public class Place {
         this.city = city;
         this.state = state;
         this.createdAt = new Date(System.currentTimeMillis());
-        // this.updatedAt = updatedAt;
     }
 
     public Place(String name, String city, String state) {
@@ -42,7 +41,6 @@ public class Place {
         this.city = city;
         this.state = state;
         this.createdAt = new Date(System.currentTimeMillis());
-        // this.updatedAt = updatedAt;
     }
 
     // Getters

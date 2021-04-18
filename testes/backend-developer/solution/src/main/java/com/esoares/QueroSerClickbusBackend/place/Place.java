@@ -88,8 +88,8 @@ public class Place {
         this.state = state;
     }
 
-    public void setSlug(String slug) {
-        this.slug = slug;
+    public void setSlug(String name) {
+        this.slug = createSlug(name);
     }
 
     public void setCreatedAt(Date createdAt) {
@@ -101,10 +101,10 @@ public class Place {
     }
 
     public static String createSlug(String name) {
-        if (!name.contains(" ")) {
-            return name.toLowerCase();
+        if (name.contains(" ") || name.contains("%20")) {
+            return name.replace(" ", "-").toLowerCase();
         }
-        return name.replace(" ", "-").toLowerCase();
+        return name.toLowerCase();
     }
 
     @Override

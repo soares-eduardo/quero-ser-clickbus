@@ -1,6 +1,9 @@
 package com.esoares.QueroSerClickbusBackend.place;
 
 import java.util.List;
+import java.util.Objects;
+
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,8 +31,28 @@ public class PlaceService {
     public void deletePlace(Long placeId) {
         boolean exists = placeRepository.existsById(placeId);
         if (!exists) {
-            throw new IllegalStateException("Place with id " + placeId + " does not existis.");
+            throw new IllegalStateException("Place with id " + placeId + " does not exist.");
         }
         placeRepository.deleteById(placeId);
+    }
+
+    @Transactional
+    public void updatePlace(Long placeId, String name, String city, String state) {
+
+        Place place = placeRepository.findById(placeId)
+                .orElseThrow(() -> new IllegalStateException("Place with id " + placeId + " does not exist."));
+
+        if (name != null && name.length() > 0 && !Objects.equals(place.getName(), name)) {
+            place.setName(name);
+            place.setSlug(name);
+        }
+
+        if (city != null && city.length() > 0 && !Objects.equals(place.getCity(), city)) {
+            place.setCity(city);
+        }
+
+        if (state != null && state.length() > 0 && !Objects.equals(place.getState(), state)) {
+            place.setState(state);
+        }
     }
 }

@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import javax.persistence.*;
 
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
@@ -13,11 +14,16 @@ public class Place {
     @SequenceGenerator(name = "place_sequence", sequenceName = "place_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "place_sequence")
     private Long id;
+
     private String name;
     private String slug;
     private String city;
     private String state;
+
+    @CreationTimestamp
+    @Column(name="createdAt")
     private Date createdAt;
+
     @UpdateTimestamp
     @Column(name="updateAt")
     private LocalDateTime updatedAt;
@@ -32,7 +38,6 @@ public class Place {
         this.slug = createSlug(name);
         this.city = city;
         this.state = state;
-        this.createdAt = new Date(System.currentTimeMillis());
     }
 
     public Place(String name, String city, String state) {
@@ -40,7 +45,6 @@ public class Place {
         this.slug = createSlug(name);
         this.city = city;
         this.state = state;
-        this.createdAt = new Date(System.currentTimeMillis());
     }
 
     // Getters
@@ -104,7 +108,7 @@ public class Place {
     }
 
     public static String createSlug(String name) {
-        if (name.contains(" ") || name.contains("%20")) {
+        if (name.contains(" ")) {
             return name.replace(" ", "-").toLowerCase();
         }
         return name.toLowerCase();

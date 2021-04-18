@@ -24,7 +24,7 @@ public class PlaceService {
 
     // TODO Verify if the place is already registered in the database
     public void addNewPlace(Place place) {
-        Place objPlace = new Place(place.getName(), place.getCity(), place.getState(), place.getUpdatedAt());
+        Place objPlace = new Place(place.getName(), place.getCity(), place.getState());
         placeRepository.save(objPlace);
     }
 

@@ -19,8 +19,7 @@ public class PlaceConfig {
                 1L,
                 name,
                 "New York City",
-                "NY",
-                "17-04-2021"
+                "NY"
             );
 
             repository.saveAll(List.of(centralParkCoffee));

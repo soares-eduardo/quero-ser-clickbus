@@ -1,7 +1,10 @@
 package com.esoares.QueroSerClickbusBackend.place;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import javax.persistence.*;
+
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table
@@ -15,29 +18,31 @@ public class Place {
     private String city;
     private String state;
     private Date createdAt;
-    private String updatedAt;
+    @UpdateTimestamp
+    @Column(name="updateAt")
+    private LocalDateTime updatedAt;
 
     public Place() {
 
     }
 
-    public Place(Long id, String name, String city, String state, String updatedAt) {
+    public Place(Long id, String name, String city, String state) {
         this.id = id;
         this.name = name;
         this.slug = createSlug(name);
         this.city = city;
         this.state = state;
         this.createdAt = new Date(System.currentTimeMillis());
-        this.updatedAt = updatedAt;
+        // this.updatedAt = updatedAt;
     }
 
-    public Place(String name, String city, String state, String updatedAt) {
+    public Place(String name, String city, String state) {
         this.name = name;
         this.slug = createSlug(name);
         this.city = city;
         this.state = state;
         this.createdAt = new Date(System.currentTimeMillis());
-        this.updatedAt = updatedAt;
+        // this.updatedAt = updatedAt;
     }
 
     // Getters
@@ -66,7 +71,7 @@ public class Place {
         return createdAt;
     }
 
-    public String getUpdatedAt() {
+    public LocalDateTime getUpdatedAt() {
         return updatedAt;
     }
 
@@ -96,7 +101,7 @@ public class Place {
         this.createdAt = createdAt;
     }
 
-    public void setUpdatedAt(String updatedAt) {
+    public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
     }
 

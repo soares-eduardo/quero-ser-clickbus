@@ -1,11 +1,16 @@
 package com.esoares.QueroSerClickbusBackend.place;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PlaceRepository extends JpaRepository<Place, Long> {
 
-    //TODO Create a business logic to not allow places already registered
+    @Query(value = "SELECT p FROM Place p WHERE p.name = ?1")
+    List<Place> findPlaceByName (String name);
 
 }
+ 

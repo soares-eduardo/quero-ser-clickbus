@@ -1,7 +1,6 @@
 package com.esoares.QueroSerClickbusBackend.place;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 import javax.persistence.*;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -21,11 +20,11 @@ public class Place {
     private String state;
 
     @CreationTimestamp
-    @Column(name="createdAt")
-    private Date createdAt;
+    @Column(name = "createdAt")
+    private LocalDateTime createdAt;
 
     @UpdateTimestamp
-    @Column(name="updateAt")
+    @Column(name = "updateAt")
     private LocalDateTime updatedAt;
 
     public Place() {
@@ -69,7 +68,7 @@ public class Place {
         return state;
     }
 
-    public Date getCreatedAt() {
+    public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
@@ -99,7 +98,7 @@ public class Place {
         this.slug = createSlug(name);
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
 
@@ -107,11 +106,11 @@ public class Place {
         this.updatedAt = updatedAt;
     }
 
-    public static String createSlug(String name) {
+    public String createSlug(String name) {
         if (name.contains(" ")) {
-            return name.replace(" ", "-").toLowerCase();
+            return slug = name.replace(" ", "-").toLowerCase() + "-" + id;
         }
-        return name.toLowerCase();
+        return name.toLowerCase() + "-" + id;
     }
 
     @Override

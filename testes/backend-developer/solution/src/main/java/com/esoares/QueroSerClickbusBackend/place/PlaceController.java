@@ -29,23 +29,24 @@ public class PlaceController {
         return placeService.getPlaces();
     }
 
+    @GetMapping(path = "{placeName}")
+    public List<Place> getPlacesByName(@PathVariable("placeName") String placeName) {
+        return placeService.getPlacesByName(placeName);
+    }
+
     @PostMapping
     public void registerNewPlace(@RequestBody Place place) {
         placeService.addNewPlace(place);
     }
 
-    @DeleteMapping(path="{placeId}")
-    public void deletePlace(@PathVariable("placeId") Long placeId){
+    @DeleteMapping(path = "{placeId}")
+    public void deletePlace(@PathVariable("placeId") Long placeId) {
         placeService.deletePlace(placeId);
     }
 
-    @PutMapping(path="{placeId}")
-    public void updatePlace(
-        @PathVariable("placeId") Long placeId,
-        @RequestParam(required = false) String name,
-        @RequestParam(required = false) String city,
-        @RequestParam(required = false) String state
-    ){
+    @PutMapping(path = "{placeId}")
+    public void updatePlace(@PathVariable("placeId") Long placeId, @RequestParam(required = false) String name,
+            @RequestParam(required = false) String city, @RequestParam(required = false) String state) {
         placeService.updatePlace(placeId, name, city, state);
     }
 }

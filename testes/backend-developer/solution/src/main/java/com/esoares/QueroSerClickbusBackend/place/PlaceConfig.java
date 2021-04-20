@@ -8,19 +8,14 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class PlaceConfig {
-    
+
     @Bean
     CommandLineRunner commandLineRunner(PlaceRepository repository) {
         return args -> {
 
             String name = "Central Park Coffee";
 
-            Place centralParkCoffee = new Place(
-                1L,
-                name,
-                "New York City",
-                "NY"
-            );
+            Place centralParkCoffee = new Place(1L, name, "New York City", "NY");
 
             repository.saveAll(List.of(centralParkCoffee));
 

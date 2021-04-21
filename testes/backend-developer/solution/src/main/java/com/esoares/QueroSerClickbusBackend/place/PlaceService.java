@@ -26,10 +26,14 @@ public class PlaceService {
         return placeRepository.findPlaceByName(placeName);
     }
 
-    // TODO Verify if the place is already registered in the database
+    public Place getPlaceBySlug(String placeSlug) {
+        return placeRepository.findPlaceBySlug(placeSlug);
+    }
+
     public void addNewPlace(Place place) {
         Place objPlace = new Place(place.getName(), place.getCity(), place.getState());
-        placeRepository.save(objPlace);
+        Long id = placeRepository.save(objPlace).getId();
+        updateSlug(id);
     }
 
     public void deletePlace(Long placeId) {
@@ -40,6 +44,12 @@ public class PlaceService {
         placeRepository.deleteById(placeId);
     }
 
+    public void updateSlug(Long id) {
+        Place place = placeRepository.findById(id).get();
+        place.setSlug(place.getName(), id);
+        placeRepository.save(place);
+    }
+
     @Transactional
     public void updatePlace(Long placeId, String name, String city, String state) {
 
@@ -48,7 +58,7 @@ public class PlaceService {
 
         if (name != null && name.length() > 0 && !Objects.equals(place.getName(), name)) {
             place.setName(name);
-            place.setSlug(name);
+            place.setSlug(name, place.getId());
         }
 
         if (city != null && city.length() > 0 && !Objects.equals(place.getCity(), city)) {

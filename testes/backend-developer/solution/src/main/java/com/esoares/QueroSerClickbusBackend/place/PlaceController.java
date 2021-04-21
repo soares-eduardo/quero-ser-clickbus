@@ -29,9 +29,14 @@ public class PlaceController {
         return placeService.getPlaces();
     }
 
-    @GetMapping(path = "{placeName}")
+    @GetMapping(path = "/name/{placeName}")
     public List<Place> getPlacesByName(@PathVariable("placeName") String placeName) {
         return placeService.getPlacesByName(placeName);
+    }
+
+    @GetMapping(path = "{placeSlug}")
+    public Place getPlaceBySlug(@PathVariable("placeSlug") String placeSlug) {
+        return placeService.getPlaceBySlug(placeSlug);
     }
 
     @PostMapping

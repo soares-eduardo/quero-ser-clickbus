@@ -94,8 +94,8 @@ public class Place {
         this.state = state;
     }
 
-    public void setSlug(String name) {
-        this.slug = createSlug(name);
+    public void setSlug(String name, Long id) {
+        this.slug = createSlug(name, id);
     }
 
     public void setCreatedAt(LocalDateTime createdAt) {
@@ -106,12 +106,21 @@ public class Place {
         this.updatedAt = updatedAt;
     }
 
+    //TODO Delete this method when the project is done.
     public String createSlug(String name) {
         if (name.contains(" ")) {
-            return slug = name.replace(" ", "-").toLowerCase() + "-" + id;
+            return name.replace(" ", "-").toLowerCase() + "-" + this.id;
+        }
+        return name.toLowerCase() + "-" + this.id;
+    }
+
+    public String createSlug(String name, Long id) {
+        if (name.contains(" ")) {
+            return name.replace(" ", "-").toLowerCase() + "-" + id;
         }
         return name.toLowerCase() + "-" + id;
     }
+
 
     @Override
     public String toString() {

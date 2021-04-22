@@ -1,4 +1,4 @@
-package com.esoares.QueroSerClickbusBackend.place;
+package com.esoares.QueroSerClickbusBackend.BusinessLogic;
 
 import java.util.List;
 import java.util.Objects;
@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class PlaceService {
 
-    private final PlaceRepository placeRepository;
+    private final IPlaceRepository placeRepository;
 
     @Autowired
-    public PlaceService(PlaceRepository placeRepository) {
+    public PlaceService(IPlaceRepository placeRepository) {
         this.placeRepository = placeRepository;
     }
 
@@ -23,7 +23,7 @@ public class PlaceService {
     }
 
     public List<Place> getPlacesByName(String placeName) {
-        return placeRepository.findPlaceByName(placeName);
+        return placeRepository.findPlacesByName(placeName);
     }
 
     public Place getPlaceBySlug(String placeSlug) {
@@ -32,12 +32,12 @@ public class PlaceService {
 
     public void addNewPlace(Place place) {
         Place objPlace = new Place(place.getName(), place.getCity(), place.getState());
-        Long id = placeRepository.save(objPlace).getId();
+        Long id = placeRepository.insert(objPlace).getId();
         updateSlug(id);
     }
 
     public void deletePlace(Long placeId) {
-        boolean exists = placeRepository.existsById(placeId);
+        boolean exists = placeRepository.selectById(placeId);
         if (!exists) {
             throw new IllegalStateException("Place with id " + placeId + " does not exist.");
         }
@@ -45,15 +45,15 @@ public class PlaceService {
     }
 
     public void updateSlug(Long id) {
-        Place place = placeRepository.findById(id).get();
+        Place place = placeRepository.findPlaceById(id).get();
         place.setSlug(place.getName(), id);
-        placeRepository.save(place);
+        placeRepository.insert(place);
     }
 
     @Transactional
     public void updatePlace(Long placeId, String name, String city, String state) {
 
-        Place place = placeRepository.findById(placeId)
+        Place place = placeRepository.findPlaceById(placeId)
                 .orElseThrow(() -> new IllegalStateException("Place with id " + placeId + " does not exist."));
 
         if (name != null && name.length() > 0 && !Objects.equals(place.getName(), name)) {

@@ -1,4 +1,4 @@
-package com.esoares.QueroSerClickbusBackend.place;
+package com.esoares.QueroSerClickbusBackend.BusinessLogic;
 
 import java.time.LocalDateTime;
 import javax.persistence.*;

@@ -1,6 +1,9 @@
-package com.esoares.QueroSerClickbusBackend.place;
+package com.esoares.QueroSerClickbusBackend.Interface;
 
 import java.util.List;
+
+import com.esoares.QueroSerClickbusBackend.BusinessLogic.Place;
+import com.esoares.QueroSerClickbusBackend.BusinessLogic.PlaceService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -44,7 +47,7 @@ public class PlaceController {
         placeService.addNewPlace(place);
     }
 
-    @DeleteMapping(path = "{placeId}")
+    @DeleteMapping(path = "/delete/{placeId}")
     public void deletePlace(@PathVariable("placeId") Long placeId) {
         placeService.deletePlace(placeId);
     }

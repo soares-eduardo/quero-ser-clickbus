@@ -28,7 +28,7 @@ public class PlaceRepository implements IPlaceRepository {
     public Place findPlaceBySlug(String placeSlug) {
         return placeJpa.findPlaceBySlug(placeSlug);
     }
-
+ 
     public Optional<Place> findPlaceById(Long id) {
         return placeJpa.findById(id);
     }

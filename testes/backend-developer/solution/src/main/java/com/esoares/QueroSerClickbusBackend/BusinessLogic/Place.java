@@ -34,14 +34,13 @@ public class Place {
     public Place(Long id, String name, String city, String state) {
         this.id = id;
         this.name = name;
-        this.slug = createSlug(name);
+        this.slug = createSlug(name, this.id);
         this.city = city;
         this.state = state;
     }
 
     public Place(String name, String city, String state) {
         this.name = name;
-        this.slug = createSlug(name);
         this.city = city;
         this.state = state;
     }
@@ -106,21 +105,12 @@ public class Place {
         this.updatedAt = updatedAt;
     }
 
-    //TODO Delete this method when the project is done.
-    public String createSlug(String name) {
-        if (name.contains(" ")) {
-            return name.replace(" ", "-").toLowerCase() + "-" + this.id;
-        }
-        return name.toLowerCase() + "-" + this.id;
-    }
-
     public String createSlug(String name, Long id) {
         if (name.contains(" ")) {
             return name.replace(" ", "-").toLowerCase() + "-" + id;
         }
         return name.toLowerCase() + "-" + id;
     }
-
 
     @Override
     public String toString() {

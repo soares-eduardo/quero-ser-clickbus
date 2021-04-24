@@ -11,7 +11,13 @@ This is a simple challenge to test my skills on building APIs. Its functionaliti
 
 ## Endpoints
 
+### Create a new place
 
+### Edit a place
+
+### Get a specific place by slug
+
+### List places by name
 
 ## How to Run
 

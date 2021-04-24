@@ -20,7 +20,7 @@ public class PlaceRepository implements IPlaceRepository {
     public List<Place> findAll() {
         return placeJpa.findAll();
     }
-
+        
     public List<Place> findPlacesByName(String placeName) {
         return placeJpa.findPlacesByName(placeName);
     }

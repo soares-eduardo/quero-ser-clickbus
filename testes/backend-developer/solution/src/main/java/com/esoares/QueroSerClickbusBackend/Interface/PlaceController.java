@@ -47,12 +47,12 @@ public class PlaceController {
         placeService.addNewPlace(place);
     }
 
-    @DeleteMapping(path = "/delete/{placeId}")
+    @DeleteMapping(path = "{placeId}")
     public void deletePlace(@PathVariable("placeId") Long placeId) {
         placeService.deletePlace(placeId);
     }
 
-    @PutMapping(path = "/update/{placeId}")
+    @PutMapping(path = "{placeId}")
     public void updatePlace(@PathVariable("placeId") Long placeId, @RequestParam(required = false) String name,
             @RequestParam(required = false) String city, @RequestParam(required = false) String state) {
         placeService.updatePlace(placeId, name, city, state);

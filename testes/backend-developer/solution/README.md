@@ -54,4 +54,4 @@ You can optionally update these three attributes by adding the place id next to 
 ## How to Run
 
 I've provided a test enviroment on Heroko where you can interact with the API by following the endpoint instructions above.
-Acesses link: https://quero-ser-clickbus-backend.herokuapp.com/api/place
+Accesses link: https://quero-ser-clickbus-backend.herokuapp.com/api/place

@@ -1,6 +1,6 @@
 # ClickBus - Backend Developer Challenge
 
-This is a simple challenge to test my skills on building APIs. Its functionalities are basiclly create and edit places, as well as get a specific one and list them by name.
+This is a simple challenge to test my skills on building APIs. Its functionalities are basically create and edit places, as well as get a specific one and list them by name.
 
 ## Technologies
 

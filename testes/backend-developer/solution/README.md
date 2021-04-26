@@ -17,11 +17,13 @@ In order to create a new place, you only need to inform its name, city and state
 
 - /api/place/
 
+```json
 {
     "name":"Wendy's",
     "city":"Chicago",
     "state":"IL"
 }
+```
 
 ### Get all places
 
@@ -41,11 +43,13 @@ You can optionally update these three attributes by adding the place id next to 
 
 - /api/place/{place-id}
 
+```json
 {
     "name":"Starbucks Manhattan",
     "city":"New York City",
     "state":"NY"
 }
+```
 
 ## How to Run
 

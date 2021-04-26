@@ -13,7 +13,7 @@ This is a simple challenge to test my skills on building APIs. Its functionaliti
 
 ### Create a new place
 
-In order to create a new place, you only need to inform its name, city and state by making a post request with the url bellow
+In order to create a new place, you only need to inform its name, city and state by making a post request with the url bellow:
 
 - /api/place/
 

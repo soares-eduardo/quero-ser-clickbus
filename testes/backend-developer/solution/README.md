@@ -21,4 +21,5 @@ This is a simple challenge to test my skills on building APIs. Its functionaliti
 
 ## How to Run
 
-I've provided a test enviroment on Heroko where you can interact with the API by following the endpoint instructions above. Acesses link: https://quero-ser-clickbus-backend.herokuapp.com/api/place
+I've provided a test enviroment on Heroko where you can interact with the API by following the endpoint instructions above. 
+Acesses link: https://quero-ser-clickbus-backend.herokuapp.com/api/place

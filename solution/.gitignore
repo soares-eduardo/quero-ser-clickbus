@@ -32,5 +32,6 @@ build/
 ### VS Code ###
 .vscode/
 
-### EXTRA FILES ###
-QueroSerClickbusBackend.zip
+### Extra Files ###
+
+*.zip

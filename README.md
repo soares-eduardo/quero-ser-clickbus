@@ -1,9 +1,36 @@
-# <img height="100" src="https://static.clickbus.com/live/ClickBus/logo-clickbus-purple-2018.svg">
+# Backend Developer Challenge
+This is a simple challenge to test your skills on building APIs.
+The ClickBus services use mainly Java and Springboot technologies. However, you can use any language and framework that you feel more confortable.
 
-A ClickBus é a maior plataforma online de vendas de passagens rodoviárias no Brasil! Nossa missão é facilitar a conexão entre pessoas e seus destinos, e se você tem atitude de dono e vontade de fazer acontecer, traga pra gente toda sua bagagem e venha para nosso busão!
+# What to do
+Create a simple API to manage places (CRUD). This API should allow to:
+- Create a place
+- Edit a place
+- Get a specific place
+- List places and filter them by name
 
-# Como se Candidatar
+A place must have the following fields:
+- name
+- slug
+- city
+- state
+- created at
+- updated at
 
-Está afim de embarcar nessa? Mostre a sua bagagem pra gente aplicando em: 
+# Requirements
+- All API responses must be JSON
+- Provide a README.md file with usage instructions (how to run, endpoints etc)
+- Provide a testing environment (heroku, docker, etc)
 
-https://jobs.kenoby.com/clickbus
+# Recommendations
+- Tests, tests and tests
+- SOLID
+- Code and commits in english (methods, classes, variables, etc)
+
+# Evaluation
+- Project structure, architecturing and organization
+- Programming good practices
+- VCS practices
+
+# Delivery
+You must **fork** this repository and commit the solution in the **solution** folder. Your repository must be public. After that, send the repository link on the **kenoby platform**.

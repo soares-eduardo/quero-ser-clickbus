@@ -1,6 +1,7 @@
 package com.eduardosoares.QueroSerClickbusBackend.BusinessRules;
 
 import com.eduardosoares.QueroSerClickbusBackend.Application.PlaceDTO;
+import com.eduardosoares.QueroSerClickbusBackend.BusinessRules.Exceptions.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,6 @@ public class PlaceService {
     }
 
     public PlaceDTO getPlaceBySlug(String slug) {
-        return placeRepository.findPlaceBySlug(slug).map(placeMapper::toDto).orElseThrow();
+        return placeRepository.findPlaceBySlug(slug).map(placeMapper::toDto).orElseThrow(NotFoundException::new);
     }
 }

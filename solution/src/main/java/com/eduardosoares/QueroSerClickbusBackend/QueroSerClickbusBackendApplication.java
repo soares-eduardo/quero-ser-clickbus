@@ -9,5 +9,4 @@ public class QueroSerClickbusBackendApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(QueroSerClickbusBackendApplication.class, args);
 	}
-
 }

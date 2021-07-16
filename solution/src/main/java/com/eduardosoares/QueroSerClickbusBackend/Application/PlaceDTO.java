@@ -1,7 +1,6 @@
-package com.eduardosoares.QueroSerClickbusBackend.Application.Dtos;
+package com.eduardosoares.QueroSerClickbusBackend.Application;
 
 import javax.validation.constraints.NotNull;
-import java.time.LocalDateTime;
 
 public class PlaceDTO {
 

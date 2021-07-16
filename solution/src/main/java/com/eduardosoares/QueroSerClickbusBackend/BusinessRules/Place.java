@@ -1,4 +1,4 @@
-package com.eduardosoares.QueroSerClickbusBackend.BusinessRules.Models;
+package com.eduardosoares.QueroSerClickbusBackend.BusinessRules;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -35,9 +35,8 @@ public class Place {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
-    public Place(String name, String slug, String city, String state) {
+    public Place(String name, String city, String state) {
         this.name = name;
-        this.slug = slug;
         this.city = city;
         this.state = state;
     }

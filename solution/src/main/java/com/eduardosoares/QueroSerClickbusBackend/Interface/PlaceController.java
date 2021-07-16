@@ -1,12 +1,10 @@
 package com.eduardosoares.QueroSerClickbusBackend.Interface;
 
-import com.eduardosoares.QueroSerClickbusBackend.Application.Dtos.PlaceDTO;
-import org.apache.coyote.Response;
+import com.eduardosoares.QueroSerClickbusBackend.Application.PlaceDTO;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.print.attribute.standard.Media;
 import javax.validation.Valid;
 
 @CrossOrigin(value = "*")
@@ -15,7 +13,7 @@ import javax.validation.Valid;
 public class PlaceController {
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<PlaceDTO> getPlaces() {
+    public ResponseEntity<PlaceDTO> getAllPlaces() {
         return ResponseEntity.ok(null);
     }
 

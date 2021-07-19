@@ -8,9 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface IPlaceRepository {
-
-    //TODO Finish deciding the methods
-
     List<Place> findAllPlaces();
     Optional<Place> findPlaceBySlug(String slug);
     List<Place> findPlacesByName(String name);

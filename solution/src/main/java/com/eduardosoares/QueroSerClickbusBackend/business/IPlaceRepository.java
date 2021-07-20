@@ -1,4 +1,4 @@
-package com.eduardosoares.QueroSerClickbusBackend.business_rules;
+package com.eduardosoares.QueroSerClickbusBackend.business;
 
 import org.springframework.stereotype.Repository;
 

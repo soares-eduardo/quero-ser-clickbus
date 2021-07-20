@@ -1,4 +1,4 @@
-package com.eduardosoares.QueroSerClickbusBackend.business_rules.exceptions;
+package com.eduardosoares.QueroSerClickbusBackend.business.exceptions;
 
 public class ExceptionResponse {
 

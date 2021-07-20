@@ -1,7 +1,7 @@
-package com.eduardosoares.QueroSerClickbusBackend.business_rules;
+package com.eduardosoares.QueroSerClickbusBackend.business;
 
 import com.eduardosoares.QueroSerClickbusBackend.application.PlaceDTO;
-import com.eduardosoares.QueroSerClickbusBackend.business_rules.exceptions.NotFoundException;
+import com.eduardosoares.QueroSerClickbusBackend.business.exceptions.NotFoundException;
 import com.eduardosoares.QueroSerClickbusBackend.utils.MessageUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

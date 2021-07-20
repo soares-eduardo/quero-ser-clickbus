@@ -1,6 +1,6 @@
 package com.eduardosoares.QueroSerClickbusBackend.adapters;
 
-import com.eduardosoares.QueroSerClickbusBackend.business_rules.Place;
+import com.eduardosoares.QueroSerClickbusBackend.business.Place;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

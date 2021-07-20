@@ -1,4 +1,4 @@
-package com.eduardosoares.QueroSerClickbusBackend.business_rules.exceptions;
+package com.eduardosoares.QueroSerClickbusBackend.business.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -14,10 +14,10 @@ import java.util.stream.Collectors;
 public class PlaceService {
 
     @Autowired
-    IPlaceRepository placeRepository;
+    private IPlaceRepository placeRepository;
 
     @Autowired
-    PlaceMapper placeMapper;
+    private PlaceMapper placeMapper;
 
     public List<PlaceDTO> getAllPlaces() {
         return placeMapper.toDto(placeRepository.findAllPlaces());
@@ -37,16 +37,18 @@ public class PlaceService {
         return placeList;
     }
 
+    @Transactional
     public PlaceDTO registerNewPlace(PlaceDTO body) {
         Place place = placeRepository.insertPlace(placeMapper.toEntity(body));
+        place.setSlug(createSlug(place));
+
         return placeMapper.toDto(place);
     }
 
     @Transactional
     public PlaceDTO updatePlace(Long id, String name, String city, String state) {
 
-       Place place = placeRepository.findPlaceById(id).
-               orElseThrow(() -> new NotFoundException(MessageUtils.PLACE_NOT_FOUND));
+       Place place = placeMapper.toEntity(this.findPlaceById(id));
 
        if (name != null && name.length() > 0) {
            place.setName(name);
@@ -68,6 +70,20 @@ public class PlaceService {
         placeRepository.deleteById(placeDTO.getId());
 
         return placeDTO;
+    }
+
+    public String createSlug(Place place) {
+
+        String placeName = place.getName();
+        String slug = "";
+
+        if (placeName.contains(" ")) {
+            slug = placeName.replace(" ", "-").toLowerCase() + "-" + place.getId();
+            return slug;
+        }
+
+        slug = placeName.toLowerCase() + "-" + place.getId();
+        return slug;
     }
 
     public PlaceDTO findPlaceById(Long id) {

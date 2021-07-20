@@ -6,11 +6,10 @@ public class PlaceDTO {
 
     private Long id;
 
-    @NotNull
-    private String name;
+    private String slug;
 
     @NotNull
-    private String slug;
+    private String name;
 
     @NotNull
     private String city;

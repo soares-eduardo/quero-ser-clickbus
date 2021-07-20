@@ -1,4 +1,4 @@
-package com.eduardosoares.QueroSerClickbusBackend.Application;
+package com.eduardosoares.QueroSerClickbusBackend.application;
 
 import javax.validation.constraints.NotNull;
 

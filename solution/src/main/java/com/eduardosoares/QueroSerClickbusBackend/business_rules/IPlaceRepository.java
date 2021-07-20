@@ -1,6 +1,5 @@
-package com.eduardosoares.QueroSerClickbusBackend.BusinessRules;
+package com.eduardosoares.QueroSerClickbusBackend.business_rules;
 
-import com.eduardosoares.QueroSerClickbusBackend.Application.PlaceDTO;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.eduardosoares.QueroSerClickbusBackend.BusinessRules.Exceptions;
+package com.eduardosoares.QueroSerClickbusBackend.business_rules.exceptions;
 
 public class BusinessException extends RuntimeException{
 

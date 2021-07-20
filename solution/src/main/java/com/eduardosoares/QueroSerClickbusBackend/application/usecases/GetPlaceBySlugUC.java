@@ -1,7 +1,7 @@
-package com.eduardosoares.QueroSerClickbusBackend.Application.usecases;
+package com.eduardosoares.QueroSerClickbusBackend.application.usecases;
 
-import com.eduardosoares.QueroSerClickbusBackend.Application.PlaceDTO;
-import com.eduardosoares.QueroSerClickbusBackend.BusinessRules.PlaceService;
+import com.eduardosoares.QueroSerClickbusBackend.application.PlaceDTO;
+import com.eduardosoares.QueroSerClickbusBackend.business_rules.PlaceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

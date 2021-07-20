@@ -1,8 +1,7 @@
-package com.eduardosoares.QueroSerClickbusBackend.Interface;
+package com.eduardosoares.QueroSerClickbusBackend.adapters;
 
-import com.eduardosoares.QueroSerClickbusBackend.Application.PlaceDTO;
-import com.eduardosoares.QueroSerClickbusBackend.BusinessRules.IPlaceRepository;
-import com.eduardosoares.QueroSerClickbusBackend.BusinessRules.Place;
+import com.eduardosoares.QueroSerClickbusBackend.business_rules.IPlaceRepository;
+import com.eduardosoares.QueroSerClickbusBackend.business_rules.Place;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

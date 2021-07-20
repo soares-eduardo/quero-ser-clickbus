@@ -1,4 +1,4 @@
-package com.eduardosoares.QueroSerClickbusBackend.Utils;
+package com.eduardosoares.QueroSerClickbusBackend.utils;
 
 public class MessageUtils {
 

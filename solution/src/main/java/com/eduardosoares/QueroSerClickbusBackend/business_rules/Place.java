@@ -1,4 +1,4 @@
-package com.eduardosoares.QueroSerClickbusBackend.BusinessRules;
+package com.eduardosoares.QueroSerClickbusBackend.business_rules;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;

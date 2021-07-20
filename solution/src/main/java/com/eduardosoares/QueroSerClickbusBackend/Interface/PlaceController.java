@@ -1,7 +1,7 @@
 package com.eduardosoares.QueroSerClickbusBackend.Interface;
 
 import com.eduardosoares.QueroSerClickbusBackend.Application.PlaceDTO;
-import com.eduardosoares.QueroSerClickbusBackend.Application.UseCases.*;
+import com.eduardosoares.QueroSerClickbusBackend.Application.usecases.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

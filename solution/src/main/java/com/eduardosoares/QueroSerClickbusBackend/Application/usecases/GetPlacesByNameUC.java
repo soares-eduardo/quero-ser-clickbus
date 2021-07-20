@@ -1,17 +1,19 @@
-package com.eduardosoares.QueroSerClickbusBackend.Application.UseCases;
+package com.eduardosoares.QueroSerClickbusBackend.Application.usecases;
 
 import com.eduardosoares.QueroSerClickbusBackend.Application.PlaceDTO;
 import com.eduardosoares.QueroSerClickbusBackend.BusinessRules.PlaceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
-public class RegisterNewPlaceUC {
+public class GetPlacesByNameUC {
 
     @Autowired
     private PlaceService placeService;
 
-    public PlaceDTO run(PlaceDTO body) {
-        return placeService.registerNewPlace(body);
+    public List<PlaceDTO> run(String name) {
+        return placeService.getPlacesByName(name);
     }
 }

@@ -1,4 +1,4 @@
-package com.eduardosoares.QueroSerClickbusBackend.Application.UseCases;
+package com.eduardosoares.QueroSerClickbusBackend.Application.usecases;
 
 import com.eduardosoares.QueroSerClickbusBackend.Application.PlaceDTO;
 import com.eduardosoares.QueroSerClickbusBackend.BusinessRules.PlaceService;

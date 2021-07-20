@@ -12,6 +12,5 @@ public interface IPlaceRepository {
     List<Place> findPlacesByName(String name);
     Optional<Place> findPlaceById(Long id);
     Place insertPlace(Place body);
-    boolean isPlacePresent(Long id);
     void deleteById(Long id);
 }

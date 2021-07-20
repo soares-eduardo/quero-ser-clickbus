@@ -35,6 +35,13 @@ public class Place {
     @UpdateTimestamp
     private LocalDateTime updatedAt;
 
+    public Place(String name, String slug, String city, String state) {
+        this.name = name;
+        this.slug = slug;
+        this.city = city;
+        this.state = state;
+    }
+
     public Place(String name, String city, String state) {
         this.name = name;
         this.city = city;

@@ -14,7 +14,7 @@
 	<name>QueroSerClickbusBackend</name>
 	<description>Backend developer challenge.</description>
 	<properties>
-		<java.version>16</java.version>
+		<java.version>8</java.version>
 		<sonar.projectKey>soares-eduardo_quero-ser-clickbus</sonar.projectKey>
 		<sonar.organization>soares-eduardo</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>

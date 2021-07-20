@@ -43,9 +43,4 @@ public class PlaceRepository implements IPlaceRepository {
     public Place insertPlace(Place body) {
         return placeJpa.save(body);
     }
-
-    @Override
-    public boolean isPlacePresent(Long id) {
-        return placeJpa.existsById(id);
-    }
 }
